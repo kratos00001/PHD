@@ -1,0 +1,40 @@
+package ma.uae.subjects.controller;
+
+import ma.uae.subjects.model.Subject;
+import ma.uae.subjects.service.SubjectService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/subjects")
+public class SubjectController {
+
+    private final SubjectService subjectService;
+
+    @Autowired
+    public SubjectController(SubjectService subjectService) {
+        this.subjectService = subjectService;
+    }
+
+    @GetMapping
+    public List<Subject> getAllSubjects() {
+        return subjectService.getAllSubjects();
+    }
+
+    @PostMapping
+    public Subject createSubject(@RequestBody Subject subject) {
+        return subjectService.createSubject(subject);
+    }
+
+    @PutMapping("/{id}")
+    public Subject updateSubject(@PathVariable Long id, @RequestBody Subject subject) {
+        return subjectService.updateSubject(id, subject);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteSubject(@PathVariable Long id) {
+        subjectService.deleteSubject(id);
+    }
+}
