@@ -32,6 +32,10 @@ public class StudentController {
     public Student updateStudent(@PathVariable Long id, @RequestBody Student student) {
         return studentService.updateStudent(id, student);
     }
+    @PutMapping ("/cne/{cne}")
+    public Student updateStudent(@PathVariable String cne, @RequestBody Student student) {
+        return studentService.updatePasswordByCne(cne, student);
+    }
 
     @DeleteMapping("/{id}")
     public void deleteStudent(@PathVariable Long id) {

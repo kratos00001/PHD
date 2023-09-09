@@ -30,6 +30,7 @@ public class SubjectService {
         if (existingSubject != null) {
             // Update subject properties
             existingSubject.setName(subject.getName());
+            existingSubject.setDescription(subject.getDescription());
             // Update other properties as needed
 
             return subjectRepository.save(existingSubject);

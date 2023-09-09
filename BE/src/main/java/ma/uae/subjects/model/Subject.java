@@ -14,6 +14,7 @@ public class Subject {
     private Long id;
 
     private String name;
+    private String description;
 
     @ManyToOne
     @JoinColumn(name = "teacher_id")

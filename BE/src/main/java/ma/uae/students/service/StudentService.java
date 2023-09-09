@@ -30,8 +30,18 @@ public class StudentService {
         if (existingStudent != null) {
             // Update student properties
             existingStudent.setName(student.getName());
+            existingStudent.setCne(student.getCne());
+            existingStudent.setPassword(student.getPassword());
             // Update other properties as needed
 
+            return studentRepository.save(existingStudent);
+        }
+        return null;
+    }
+    public Student updatePasswordByCne(String cne, Student student) {
+        Student existingStudent = studentRepository.findByCne(cne);
+        if (existingStudent != null) {
+            existingStudent.setPassword(student.getPassword());
             return studentRepository.save(existingStudent);
         }
         return null;

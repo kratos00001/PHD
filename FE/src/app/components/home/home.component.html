@@ -1,0 +1,45 @@
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <a href="/">
+                <img src="../../../assets/gcdoc_logo.png" alt="Logo 1" class="logo">
+            </a>
+            <h1 class="main-title">Gestion du Cycle Doctorat</h1>
+            <button *ngIf="teacherService.isAuthenticated()" class="button btn-primary" (click)="logout_t()">Logout</button>
+            <button *ngIf="studentService.isAuthenticated()" class="button btn-danger" (click)="logout_s()">Logout</button>
+            <img src="../../../assets/uae_logo.png" alt="Logo 2" class="logo">
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <a href="teachers" class="section-link">
+                    <div class="section">
+                        <h3>Accès enseignants</h3>
+                        <img src="../../../assets/T_home.jpg" alt="Teacher" class="section-img">
+                        <p>Enseignant : Proposition de sujets</p>
+                        <!-- Add content for teachers section -->
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="students" class="section-link">
+                    <div class="section">
+                        <h3>Accès doctorants</h3>
+                        <img src="../../../assets/S_home.jpg" alt="Student" class="section-img">
+                        <p>Etudiant : Candidature à l'Inscription</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="calendar" class="section-link">
+                    <div class="section">
+                        <h3>Calendrier</h3>
+                        <img src="../../../assets/c_home.jpg" alt="Calendar" class="section-img">
+                        <p>Calendrier : plus de details</p>
+                        <!-- Add content for calendar section -->
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>

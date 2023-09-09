@@ -13,6 +13,8 @@ public class Student {
     private Long id;
 
     private String name;
+    private String cne;
+    private String password;
 
     // Constructors, getters, setters
 }

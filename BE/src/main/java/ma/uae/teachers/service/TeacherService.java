@@ -30,6 +30,8 @@ public class TeacherService {
         if (existingTeacher != null) {
             // Update teacher properties
             existingTeacher.setName(teacher.getName());
+            existingTeacher.setAccess_id(teacher.getAccess_id());
+            existingTeacher.setPassword(teacher.getPassword());
             // Update other properties as needed
 
             return teacherRepository.save(existingTeacher);

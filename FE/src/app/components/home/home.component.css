@@ -1,0 +1,46 @@
+/* Add custom styles here */
+.container {
+    background-color: #f0f5ff; /* Light blue background */
+    min-height: 100vh;
+    width: 100%;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+    max-width: 100px;
+    margin: 0 20px;
+}
+
+.main-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #005faa; /* Darker blue main title */
+    text-align: center;
+    margin: 20px 0;
+}
+
+.section {
+    display: block;
+    background-color: #d9e6ff; /* Lighter blue section background */
+    transition: background-color 0.3s;
+    color: #005faa; /* Darker blue section text color */
+    text-align: center;
+    padding: 40px 0;
+    margin: 20px 0;
+}
+
+.section:hover {
+    background-color: #003b75; /* Darker blue on hover */
+    color: white; /* White text on hover */
+}
+
+.section-img {
+    max-width: 90%;
+    margin: 0 auto;
+}

@@ -13,6 +13,8 @@ public class Teacher {
     private Long id;
 
     private String name;
+    private String access_id;
+    private String password;
 
     // Constructors, getters, setters
 }
