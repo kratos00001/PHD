@@ -1,6 +1,5 @@
 package ma.uae.applications.model;
 
-import lombok.Data;
 import ma.uae.students.model.Student;
 import ma.uae.subjects.model.Subject;
 

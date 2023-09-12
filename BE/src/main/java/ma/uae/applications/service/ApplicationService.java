@@ -2,9 +2,7 @@ package ma.uae.applications.service;
 
 import ma.uae.applications.model.Application;
 import ma.uae.applications.repository.ApplicationRepository;
-import ma.uae.students.model.Student;
 import ma.uae.students.repository.StudentRepository;
-import ma.uae.subjects.model.Subject;
 import ma.uae.subjects.repository.SubjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
