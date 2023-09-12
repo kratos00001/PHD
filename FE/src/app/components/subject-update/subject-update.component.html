@@ -1,4 +1,5 @@
 <div class="container">
+  <div class="update-container">
     <h2 class="section-title">{{ subject.id ? 'Update' : 'Create' }} Subject</h2>
     <form (submit)="createOrUpdateSubject()">
       <div class="form-group">
@@ -9,7 +10,8 @@
         <label for="description">Description:</label>
         <textarea id="description" [(ngModel)]="subject.description" class="form-control"></textarea>
       </div>
-      <button class="button" type="submit">{{ subject.id ? 'Update' : 'Create' }}</button>
+      <button class="update-button" type="submit">Update</button>
     </form>
   </div>
+</div>
   

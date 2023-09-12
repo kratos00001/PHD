@@ -33,7 +33,7 @@
     border-radius: 5px;
 }
 
-.login-button {
+.register-button {
     background-color: #629de4;
     color: white;
     margin-top: 10px;
@@ -44,7 +44,7 @@
     transition: background-color 0.3s;
 }
 
-.login-button:hover {
+.register-button:hover {
     background-color: #325E90;
 }
 
