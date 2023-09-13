@@ -14,6 +14,10 @@ export class SubjectService {
     return this.http.get(`${this.apiUrl}/api/subjects`);
   }
 
+  getSubjectById(id: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/api/subjects/${id}`);
+  }
+
   createSubject(subject: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/api/subjects`, subject);
   }

@@ -32,7 +32,9 @@ public class ApplicationService {
         return applicationRepository.findAll();
     }
 
-    // Other methods for creating, updating, and deleting applications
+    public Application getApplicationById(Long id) {
+        return applicationRepository.findById(id).orElse(null);
+    }
 
     public Application createApplication(Application application) {
         return applicationRepository.save(application);

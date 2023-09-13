@@ -23,6 +23,11 @@ public class TeacherController {
         return teacherService.getAllTeachers();
     }
 
+    @GetMapping("/{id}")
+    public Teacher getTeacherById(@PathVariable Long id) {
+        return teacherService.getTeacherById(id);
+    }
+
     @PostMapping
     public Teacher createTeacher(@RequestBody Teacher teacher) {
         return teacherService.createTeacher(teacher);

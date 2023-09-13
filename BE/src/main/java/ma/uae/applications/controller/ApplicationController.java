@@ -23,6 +23,11 @@ public class ApplicationController {
         return applicationService.getAllApplications();
     }
 
+    @GetMapping("/{id}")
+    public Application getApplicationById(@PathVariable Long id) {
+        return applicationService.getApplicationById(id);
+    }
+
     @PostMapping
     public Application createApplication(@RequestBody Application application) {
         return applicationService.createApplication(application);

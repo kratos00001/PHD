@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SubjectService } from 'src/app/services/subject.service';
 
 @Component({
@@ -7,28 +7,30 @@ import { SubjectService } from 'src/app/services/subject.service';
   templateUrl: './subject-update.component.html',
   styleUrls: ['./subject-update.component.css']
 })
-export class SubjectUpdateComponent {
+export class SubjectUpdateComponent implements OnInit{
   subject: any = {};
 
   constructor(
     private subjectService: SubjectService,
+    private route: ActivatedRoute,
     private router: Router
   ) {}
+  ngOnInit(): void {
+    const subjectId = this.route.snapshot.params['id'];
+    this.subjectService.getSubjectById(subjectId).subscribe(
+      (data) => {
+        this.subject = data;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
 
-  createOrUpdateSubject(): void {
+  UpdateSubject(): void {
     if (this.subject.id) {
       // Update an existing subject
       this.subjectService.updateSubject(this.subject.id, this.subject).subscribe(
-        () => {
-          this.router.navigateByUrl('/subjects');
-        },
-        (error) => {
-          console.error(error);
-        }
-      );
-    } else {
-      // Create a new subject
-      this.subjectService.createSubject(this.subject).subscribe(
         () => {
           this.router.navigateByUrl('/subjects');
         },

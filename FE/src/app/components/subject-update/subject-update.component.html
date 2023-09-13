@@ -1,17 +1,16 @@
 <div class="container">
   <div class="update-container">
-    <h2 class="section-title">{{ subject.id ? 'Update' : 'Create' }} Subject</h2>
-    <form (submit)="createOrUpdateSubject()">
+    <h2 class="section-title">Update Subject</h2>
+    <form (submit)="UpdateSubject()">
       <div class="form-group">
         <label for="name">Name:</label>
-        <input type="text" id="name" [(ngModel)]="subject.name" class="form-control">
+        <input type="text" id="name" [(ngModel)]="subject.name" name="name" class="form-control">
       </div>
       <div class="form-group">
         <label for="description">Description:</label>
-        <textarea id="description" [(ngModel)]="subject.description" class="form-control"></textarea>
+        <textarea id="description" [(ngModel)]="subject.description" name="description" class="form-control"></textarea>
       </div>
       <button class="update-button" type="submit">Update</button>
     </form>
   </div>
 </div>
-  

@@ -17,9 +17,9 @@ export class SubjectListComponent implements OnInit {
 
   ngOnInit(): void {
     this.subjectService.getAllSubjects().subscribe(
-      (subjects) => {
+      (data) => {
         const teacherId = this.teacherService.getCurrentTeacherId();
-        this.subjects = subjects.filter((subject: { teacher: { id: string | null; }; }) => subject.teacher.id === teacherId);
+        this.subjects = data;
         console.log(teacherId);
       },
       (error) => {

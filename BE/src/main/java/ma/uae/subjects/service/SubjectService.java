@@ -21,6 +21,10 @@ public class SubjectService {
         return subjectRepository.findAll();
     }
 
+    public Subject getSubjectById(Long id) {
+        return subjectRepository.findById(id).orElse(null);
+    }
+
     public Subject createSubject(Subject subject) {
         return subjectRepository.save(subject);
     }
