@@ -15,7 +15,7 @@ export class LoginComponent {
   constructor(private teacherService: TeacherService, private router: Router) {}
 
   onLogin(): void {
-    this.teacherService.getAllStudents().subscribe(
+    this.teacherService.getAllTeachers().subscribe(
       (teachers) => {
         const teacher = teachers.find((t: any) => t.access_id === this.username && t.password === this.password);
         if (teacher) {

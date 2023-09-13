@@ -11,7 +11,7 @@ export class TeacherService {
 
   constructor(private http: HttpClient) {}
 
-  getAllStudents(): Observable<any> {
+  getAllTeachers(): Observable<any> {
     return this.http.get(`${this.apiUrl}/api/teachers`);
   }
   initializeAuthState(): void {

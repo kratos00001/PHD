@@ -1,6 +1,10 @@
+<app-teachers-navbar></app-teachers-navbar>
+
 <div class="container">
-    <h2 class="section-title">Subject Management</h2>
-    <a class="create-button" routerLink="/subjects/create">Create New Subject</a>
+
+<br>
+<br> 
+    <a class="create-button" routerLink="/subjects/create"><i class="fa-solid fa-plus"></i></a>
     <br>
     <br>
     <table class="table">
@@ -18,8 +22,9 @@
           <td>{{ subject.name }}</td>
           <td>{{ subject.description }}</td>
           <td>
-            <a class="button" routerLink="/subjects/update/{{ subject.id }}">Edit</a>
-            <button class="button" (click)="deleteSubject(subject.id)">Delete</button>
+            <a class="button" routerLink="/subjects/update/{{ subject.id }}"><i class="fas fa-edit"></i></a>
+            &nbsp; 
+            <a class="button" (click)="deleteSubject(subject.id)"><i class="fas fa-trash" style="color: red;"></i></a>
           </td>
         </tr>
       </tbody>

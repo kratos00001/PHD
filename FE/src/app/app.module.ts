@@ -18,6 +18,8 @@ import { TeacherService } from './services/teacher.service';
 import { SubjectListComponent } from './components/subject-list/subject-list.component';
 import { SubjectCreateComponent } from './components/subject-create/subject-create.component';
 import { SubjectUpdateComponent } from './components/subject-update/subject-update.component';
+import { TeachersNavbarComponent } from './components/teachers-navbar/teachers-navbar.component';
+import { ApplicationListComponent } from './components/application-list/application-list.component';
 
 const appRoutes: Routes = [   
   { path: '', component: HomeComponent},
@@ -30,6 +32,8 @@ const appRoutes: Routes = [
   { path: 'subjects', component: SubjectListComponent, canActivate: [LoginGuard]},
   { path: 'subjects/create', component: SubjectCreateComponent, canActivate: [LoginGuard]},
   { path: 'subjects/update/:id', component: SubjectUpdateComponent, canActivate: [LoginGuard]},
+  { path: 'applications', component: ApplicationListComponent, canActivate: [LoginGuard]},
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
@@ -45,6 +49,8 @@ const appRoutes: Routes = [
     SubjectListComponent,
     SubjectCreateComponent,
     SubjectUpdateComponent,
+    TeachersNavbarComponent,
+    ApplicationListComponent,
   ],
   imports: [
     BrowserModule,
