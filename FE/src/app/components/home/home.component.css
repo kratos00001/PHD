@@ -9,7 +9,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
 }
 
 .logo {
@@ -22,9 +21,11 @@
     font-weight: bold;
     color: #005faa; /* Darker blue main title */
     text-align: center;
-    margin: 20px 0;
+    margin: auto; 
+    padding-right: 150px;
 }
 
+/* Add these styles for section redesign */
 .section {
     display: block;
     background-color: #d9e6ff; /* Lighter blue section background */
@@ -33,12 +34,40 @@
     text-align: center;
     padding: 40px 0;
     margin: 20px 0;
+    transform: scale(1); /* Reset size by default */
 }
 
 .section:hover {
     background-color: #003b75; /* Darker blue on hover */
-    color: white; /* White text on hover */
+    color: blue; /* Change text color on hover */
+    transform: scale(1.1); /* Increase size on hover */
 }
+
+.section-link:not(:hover) .section {
+    transform: scale(0.9); /* Reduce size when another section is hovered */
+}
+
+.section-img {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+
+/* Add these styles for section redesign */
+.larger-section {
+    transform: scale(1.2); /* Make the middle section larger */
+    transition: transform 0.3s;
+}
+
+.section:hover {
+    background-color: #105aa5; /* Darker blue on hover */
+    color: white; /* Change text color on hover */
+}
+
+.section-link:hover .larger-section {
+    transform: scale(1); /* Reset size on hover of other sections */
+}
+
 
 .section-img {
     max-width: 90%;

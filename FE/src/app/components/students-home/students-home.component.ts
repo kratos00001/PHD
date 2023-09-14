@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { StudentService } from 'src/app/services/student.service';
 
 @Component({
   selector: 'app-students-home',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class StudentsHomeComponent {
 
+  constructor(public studentService : StudentService, public router: Router) { }
+
+  logout_s(): void {
+    this.studentService.logout();
+    this.router.navigate(['/']);
+  }
 }

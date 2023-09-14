@@ -1,5 +1,21 @@
-<div class="navbar">
-    <a routerLink="/subjects" routerLinkActive="active">Subject Management</a>
-    <a routerLink="/applications" routerLinkActive="active">Application Management</a>
+
+  <div class="logo-container">
+    <a href="/">
+        <img src="../../../assets/uae_logo.png" alt="Logo 1" class="logo">
+    </a>
+    <h1 class="main-title">Gestion du Cycle Doctorat</h1>
   </div>
-  
+
+  <hr>
+
+  <div class="navbar">
+    <div class="left-links">
+      <a routerLink="/subjects" routerLinkActive="active">Subject Management</a>
+      <a routerLink="/applications" routerLinkActive="active">Application Management</a>
+    </div>
+    
+    <div class="right-links">
+      <span>Welcome {{teacher.name}},</span>
+      <a class="icon-button" (click)="logout()"><i class="fas fa-sign-out-alt"></i></a>
+    </div>
+  </div>

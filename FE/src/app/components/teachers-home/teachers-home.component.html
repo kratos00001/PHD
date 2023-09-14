@@ -1,10 +1,9 @@
 <div class="container">
     <div class="logo-container">
         <a href="/">
-            <img src="../../../assets/gcdoc_logo.png" alt="Logo 1" class="logo">
+            <img src="../../../assets/uae_logo.png" alt="Logo 1" class="logo">
         </a>
         <h1 class="main-title">Gestion du Cycle Doctorat</h1>
-        <img src="../../../assets/uae_logo.png" alt="Logo 2" class="logo">
     </div>
     <hr>
 
@@ -15,6 +14,7 @@
         
         En cas de non réception de cet email, veuiilez vérifier votre dossier spam. Le cas échéant, veuillez adresser un email à l'adresse <a href="mailto:gcd@uae.ac.ma">gcd@uae.ac.ma</a> pour solliciter une invitation.</p>
         <div class="button-container">
-            <a class="custom-button" href="/login">Se connecter</a>
+            <a class="custom-button" *ngIf="!teacherService.isAuthenticated()" href="/login">Se connecter</a>
+            <a class="custom-button" *ngIf="teacherService.isAuthenticated()" href="/subjects">Déja connecté</a>
         </div>
 </div>

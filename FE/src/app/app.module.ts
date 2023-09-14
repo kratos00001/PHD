@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LoginGuard } from './guards/login.guard';
 import { AppGuard } from './guards/application.guard';
+import { BlockGuard } from './guards/block.guard';
 import { TeacherService } from './services/teacher.service';
 import { SubjectListComponent } from './components/subject-list/subject-list.component';
 import { SubjectCreateComponent } from './components/subject-create/subject-create.component';
@@ -22,18 +23,18 @@ import { TeachersNavbarComponent } from './components/teachers-navbar/teachers-n
 import { ApplicationListComponent } from './components/application-list/application-list.component';
 
 const appRoutes: Routes = [   
-  { path: '', component: HomeComponent},
-  { path: 'teachers', component: TeachersHomeComponent},
-  { path: 'students', component: StudentsHomeComponent },
-  { path: 'calendar', component: CalendarComponent, canActivate: [LoginGuard]},   
-  { path: 'login', component: LoginComponent },
-  { path: 'application', component: ApplicationComponent},
-  { path: 'register', component: RegisterComponent},
+  { path: '', component: HomeComponent, canActivate: [BlockGuard]},
+  { path: 'teachers', component: TeachersHomeComponent, canActivate: [BlockGuard]},
+  { path: 'students', component: StudentsHomeComponent},
+  { path: 'calendar', component: CalendarComponent, canActivate: [BlockGuard]},   
+  { path: 'login', component: LoginComponent, canActivate: [BlockGuard]},
+  { path: 'application', component: ApplicationComponent, canActivate: [BlockGuard]},
+  { path: 'register', component: RegisterComponent, canActivate: [BlockGuard]},
   { path: 'subjects', component: SubjectListComponent, canActivate: [LoginGuard]},
   { path: 'subjects/create', component: SubjectCreateComponent, canActivate: [LoginGuard]},
   { path: 'subjects/update/:id', component: SubjectUpdateComponent, canActivate: [LoginGuard]},
   { path: 'applications', component: ApplicationListComponent, canActivate: [LoginGuard]},
-  { path: '**', redirectTo: '' },
+  { path: '**', redirectTo: '' , canActivate: [BlockGuard]},
 ];
 
 @NgModule({

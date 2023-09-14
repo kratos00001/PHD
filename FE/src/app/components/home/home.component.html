@@ -2,12 +2,10 @@
     <div class="container">
         <div class="logo-container">
             <a href="/">
-                <img src="../../../assets/gcdoc_logo.png" alt="Logo 1" class="logo">
+                <img src="../../../assets/uae_logo.png" alt="Logo 1" class="logo">
             </a>
             <h1 class="main-title">Gestion du Cycle Doctorat</h1>
-            <button *ngIf="teacherService.isAuthenticated()" class="button btn-primary" (click)="logout_t()">Logout</button>
             <button *ngIf="studentService.isAuthenticated()" class="button btn-danger" (click)="logout_s()">Logout</button>
-            <img src="../../../assets/uae_logo.png" alt="Logo 2" class="logo">
         </div>
         <hr>
         <div class="row">
@@ -29,7 +27,7 @@
                         <p>Etudiant : Candidature à l'Inscription</p>
                     </div>
                 </a>
-            </div>
+            </div>            
             <div class="col-md-4">
                 <a href="calendar" class="section-link">
                     <div class="section">

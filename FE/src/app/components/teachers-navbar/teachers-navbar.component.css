@@ -1,25 +1,70 @@
+.logo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  max-width: 100px;
+  margin: 0 20px;
+  /* Add styles for logo images */
+}
+.main-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #005faa; /* Darker blue main title */
+  text-align: center;
+  margin: auto; 
+  padding-right: 150px;
+}
 .navbar {
-    background-color: #f0f5ff;
-    overflow: hidden;
-    text-align: center;
-  }
-  
-  .navbar a {
-    display: inline-block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    margin: 0 120px; 
-  }
-  
-  .navbar a:hover {
-    background-color: #629de4;
-    color: white;
-  }
-  
-  .navbar a.active {
-    background-color: #325E90;
-    color: white;
-  }
-  
+  background-color: #f0f5ff;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; /* Add padding to the top and sides */
+}
+
+.left-links {
+  display: flex;
+  align-items: center;
+}
+
+.left-links a {
+  display: inline-block;
+  padding: 10px 20px;
+  color: black;
+  text-decoration: none;
+  margin-right: 20px; /* Add some space between links */
+  background-color: #e0e0e0; /* Button background color */
+  border-radius: 5px; /* Add rounded corners */
+}
+
+.right-links {
+  display: flex;
+  align-items: center;
+}
+
+.right-links span {
+  margin-right: 10px; /* Add space between "Welcome" and username */
+}
+
+.icon-button {
+  color: black;
+  text-decoration: none;
+  margin-right: 10px; /* Add space between icons */
+}
+
+.icon-button i {
+  font-size: 18px;
+}
+
+.navbar a:hover {
+  background-color: #629de4;
+  color: white;
+}
+
+.navbar a.active {
+  background-color: #325E90;
+  color: white;
+}

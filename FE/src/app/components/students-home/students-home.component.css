@@ -2,7 +2,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
 }
 .logo {
     max-width: 100px;
@@ -12,9 +11,10 @@
 .main-title {
     font-size: 30px;
     font-weight: bold;
-    color: #6499D9;
+    color: #005faa; /* Darker blue main title */
     text-align: center;
-    margin: 20px 0;
+    margin: auto; 
+    padding-right: 150px;
 }
 h2 {
     text-align: center;
