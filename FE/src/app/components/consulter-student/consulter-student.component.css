@@ -1,0 +1,79 @@
+.logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    max-width: 100px;
+    margin: 0 20px;
+    /* Add styles for logo images */
+}
+.main-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #005faa; /* Darker blue main title */
+    text-align: center;
+    margin: auto; 
+    padding-right: 150px;
+}
+h2 {
+    text-align: center;
+}
+p {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    background-color: #f0f5ff; /* Light blue background */
+    min-height: 100vh;
+    width: 100%;
+}
+
+.custom-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #4477B6; /* Use the theme color */
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.custom-button:hover {
+    background-color: #325E90; /* Darker shade for hover effect */
+}
+.infoinput{
+    display: flex;
+    flex-direction: row;
+}
+
+.infoinput1{
+    display: flex;
+    flex-direction: row;
+    margin-right: 25%;
+    margin-left: 25%;
+}
+.firsttwo{
+    display: flex;
+    flex-direction: row;
+}
+
+.titre{
+    font-weight: 700;
+    
+}
+
+.infos{
+    min-width: 25%;
+    max-width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

@@ -30,6 +30,7 @@ public class StudentController {
 
     @PostMapping
     public Student createStudent(@RequestBody Student student) {
+    	student.setStatusinscrire(false);
         return studentService.createStudent(student);
     }
 

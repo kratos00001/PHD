@@ -17,8 +17,10 @@ export class ApplicationComponent {
   onLogin(): void {
     this.studentService.getAllStudents().subscribe(
       (students) => {
+        
         const student = students.find((s: any) => s.cne === this.username && s.password === this.password);
         if (student) {
+          localStorage.setItem('userId', student.id);
           this.studentService.setAuthToken('apptoken');
           // this.errorMessage = 'Valid username and password';
          this .router.navigate(['/']); // Navigate to the dashboard or desired page

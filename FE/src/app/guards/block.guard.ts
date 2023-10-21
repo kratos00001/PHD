@@ -14,7 +14,6 @@ export class BlockGuard implements CanActivate {
         this.router.navigate(['/students']);
         return false;
     } else if (this.teacherService.isAuthenticated()) {
-        alert('You have to logout first!');
         this.router.navigate(['/subjects']);
         return false;
     } else {

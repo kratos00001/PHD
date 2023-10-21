@@ -18,8 +18,10 @@ export class LoginComponent {
   onLogin(): void {
     this.teacherService.getAllTeachers().subscribe(
       (teachers) => {
+       
         const teacher = teachers.find((t: any) => t.access_id === this.username && t.password === this.password);
         if (teacher) {
+          localStorage.setItem('teacherId', teacher.id);
           // Successful login
           this.id = teacher.id;
           this.teacherService.setAuthToken('authToken');

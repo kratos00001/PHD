@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { StudentService } from 'src/app/services/student.service';
 
@@ -7,9 +7,28 @@ import { StudentService } from 'src/app/services/student.service';
   templateUrl: './students-home.component.html',
   styleUrls: ['./students-home.component.css']
 })
-export class StudentsHomeComponent {
+export class StudentsHomeComponent  implements OnInit {
+  messageInscription?: string;
+  choix1Reult?: string;
+  choix2Reult?: string;
+
 
   constructor(public studentService : StudentService, public router: Router) { }
+
+  ngOnInit(): void {
+    this.studentService.getInscriptionStatut().subscribe((data:any) => {
+      this.messageInscription = data.message;
+    })
+
+    this.studentService.getChoixOne().subscribe((res:any) => {
+      this.choix1Reult = res.message;
+    })
+
+    this.studentService.getChoixTwo().subscribe((res:any) => {
+      this.choix2Reult = res.message;
+    })
+  }
+
 
   logout_s(): void {
     this.studentService.logout();

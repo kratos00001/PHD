@@ -1,5 +1,37 @@
 <div class="container">
-    
+
     <app-teachers-navbar></app-teachers-navbar>
-    
+    <a class="create-button" routerLink="/subjects/create"><i class="fa-solid fa-plus"></i></a>
+    <br>
+    <br>
+    <table class="table">
+      <thead>
+        <tr >
+          <th>Nom</th>
+          <th>Prenom</th>
+          <th>Titre de sujet</th>
+          <th>Choix</th>
+          <th>statut</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let subject of allSubjects">
+          <td>{{subject.nom}}</td>
+          <td>{{subject.prenom}}</td>
+          <td>{{subject.subjectTitle}}</td>
+          <td>{{subject.choix}}</td>
+          <td>{{subject.statut}}</td>
+          <td>
+            <button  class="button btn-danger"
+            (click)="accepter(subject.idstudent, subject.choix)"
+            >Accepter</button>
+            <button  class="button btn-danger"
+            (click)="refuser(subject.idstudent, subject.choix)"
+            >Refuser</button>
+            <a class="button" routerLink="/student/consulter/{{ subject.idstudent }}">consulter</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 </div>

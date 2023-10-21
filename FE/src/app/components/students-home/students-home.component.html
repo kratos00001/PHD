@@ -12,7 +12,12 @@
 
         <div class="button-container">
             <a class="custom-button" *ngIf="!studentService.isAuthenticated()" href="/application">Candidature en ligne</a>
-            <a class="custom-button" *ngIf="studentService.isAuthenticated()" href="/">Déjà connecté</a>
+            <a class="custom-button" *ngIf="studentService.isAuthenticated()" href="inscription">Déjà connecté</a>
             <button *ngIf="studentService.isAuthenticated()" class="button btn-danger" (click)="logout_s()">Logout</button>
         </div>
+
+        <h3 *ngIf="studentService.isAuthenticated()">{{messageInscription}}</h3>
+
+        <h3 *ngIf="studentService.isAuthenticated()">Choix 1 : {{choix1Reult}}</h3>
+        <h3 *ngIf="studentService.isAuthenticated()">Choix 2 : {{choix2Reult}}</h3>
 </div>
