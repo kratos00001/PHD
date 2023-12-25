@@ -36,7 +36,7 @@ public class StudentService {
 	}
 
 	public Student createStudent(Student student) {
-		student.setStatusinscrire(false);
+		student.setStatusinscription(false);
 		STatus statusOne = statutRepo.findById(4L).get();
 		student.setChoix1(statusOne);
 		STatusTwo statusTwo = statutTwoRepo.findById(4L).get();

@@ -7,28 +7,32 @@ import { StudentService } from 'src/app/services/student.service';
   templateUrl: './students-home.component.html',
   styleUrls: ['./students-home.component.css']
 })
-export class StudentsHomeComponent  implements OnInit {
+export class StudentsHomeComponent implements OnInit {
   messageInscription?: string;
   choix1Reult?: string;
   choix2Reult?: string;
+  isAlreadyInscribed: boolean = false;
 
-
-  constructor(public studentService : StudentService, public router: Router) { }
+  constructor(public studentService: StudentService, public router: Router) {}
 
   ngOnInit(): void {
-    this.studentService.getInscriptionStatut().subscribe((data:any) => {
+    this.studentService.getInscriptionStatut().subscribe((data: any) => {
       this.messageInscription = data.message;
-    })
+      this.isAlreadyInscribed = this.inscriptionToBoolean(data.message);
+    });
 
-    this.studentService.getChoixOne().subscribe((res:any) => {
+    this.studentService.getChoixOne().subscribe((res: any) => {
       this.choix1Reult = res.message;
-    })
+    });
 
-    this.studentService.getChoixTwo().subscribe((res:any) => {
+    this.studentService.getChoixTwo().subscribe((res: any) => {
       this.choix2Reult = res.message;
-    })
+    });
   }
 
+  inscriptionToBoolean(status: string): boolean {
+    return status === 'VOUS ETE DEJA INSCRIT';
+  }
 
   logout_s(): void {
     this.studentService.logout();

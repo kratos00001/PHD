@@ -18,4 +18,5 @@ public class StudentsDto {
 	private String prenom;
 	private String subjectTitle;
 	private String statut;
+	private String email;
 }

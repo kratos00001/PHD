@@ -5,5 +5,6 @@ export class studentsDto {
     subjectTitle:string = "";
     choix:string = "";
     statut:string = "";
+    email:string = "";
   }
   

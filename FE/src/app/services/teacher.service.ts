@@ -86,4 +86,8 @@ export class TeacherService {
       return 0;
     }
   }
+  sendEmail(emailDetails: { to: string; subject: string; body: string }): Observable<any> {
+    return this.http.post(`${this.apiUrl}/send-email`, emailDetails);
+  }
+  
 }

@@ -25,12 +25,13 @@ export class ApplicationListComponent  implements OnInit{
   getstudents(){
     this.teacherService.Getallstudentdto().subscribe((res) => {
      this.allSubjects=res;
-     console.log(this.allSubjects);
+     console.log('Received data:', this.allSubjects);
     });
 
 
   }
   accepter(userId:number, choix:string) {
+    console.log((this.allSubjects.find(subject => subject.idstudent === userId))?.email)
     if (choix === 'choix1') {
       this.teacherService.accepter(userId, 1).subscribe((res) => {
         console.log(res);
@@ -38,10 +39,16 @@ export class ApplicationListComponent  implements OnInit{
       this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
         this.router.navigate(['/applications']);
       });
-     
+      this.teacherService.sendEmail({
+        to: (this.allSubjects.find(subject => subject.idstudent === userId))?.email ?? 'default-email@example.com',
+        subject: 'Application Accepted',
+        body: 'Your application has been accepted.'
+      }).subscribe(response => {
+        console.log('Send email response:', response);
+      });
     } else {
       this.teacherService.accepter(userId, 2).subscribe((res) => {
-        console.log(res);
+        console.log(res );
       });
       this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
         this.router.navigate(['/applications']);
@@ -56,6 +63,13 @@ export class ApplicationListComponent  implements OnInit{
       });
       this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
         this.router.navigate(['/applications']);
+      });
+      this.teacherService.sendEmail({
+        to: (this.allSubjects.find(subject => subject.idstudent === userId))?.email ?? 'default-email@example.com', // Replace with the student's email
+        subject: 'Application Rejected',
+        body: 'Your application has been rejected.'
+      }).subscribe(response => {
+        console.log(response);
       });
     } else {
       this.teacherService.refuser(userId, 2).subscribe((res) => {

@@ -22,8 +22,13 @@ export class ApplicationComponent {
         if (student) {
           localStorage.setItem('userId', student.id);
           this.studentService.setAuthToken('apptoken');
-          // this.errorMessage = 'Valid username and password';
-         this .router.navigate(['/']); // Navigate to the dashboard or desired page
+          console.log('Bac ID:', student);
+
+          if (student.bac == null) {
+              this.router.navigate(['/inscription']);
+          } else {
+              this.router.navigate(['/students']);
+          }
         } else {
           this.errorMessage = 'Invalid username or password';
         }

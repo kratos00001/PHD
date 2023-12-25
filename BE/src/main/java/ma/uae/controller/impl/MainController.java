@@ -224,7 +224,7 @@ public class MainController {
 		student.setExperience(experience);
 		student.setSujet(sujet);
 		student.setCed(ced);
-		student.setStatusinscrire(true);
+		student.setStatusinscription(true);
 
 		STatus statusOne = statutRepo.findById(3L).get();
 		student.setChoix1(statusOne);
@@ -294,12 +294,12 @@ public class MainController {
 	@GetMapping("/getStatusINSCRI/{idstudent}")
 	public ResponseMessage getStatusInscrire(@PathVariable("idstudent") Long teacherd) {
 		Student student = studentRepository.findById(teacherd).get();
-		if (student.getStatusinscrire()) {
-			String message = "VOUS ETE DEJA INSCRIRE";
+		if (student.getStatusinscription() != null) {
+			String message = "VOUS ETE DEJA INSCRIT";
 			ResponseMessage responseMessage = new ResponseMessage(message);
 			return responseMessage;
 		} else {
-			String message = "VOUS n avez pas encore INSCRIRE";
+			String message = "VOUS N'ETE PAS INSCRIT";
 			ResponseMessage responseMessage = new ResponseMessage(message);
 			return responseMessage;
 		}
@@ -341,6 +341,7 @@ public class MainController {
 					studentsDto.setChoix("choix1");
 					studentsDto.setStatut(student.getChoix1().getValeur());
 					studentsDto.setSubjectTitle(subjects.get(i).getName());
+					studentsDto.setEmail(student.getInformationGenerale().getEmail());
 					dtos.add(studentsDto);
 				}
 
@@ -353,6 +354,7 @@ public class MainController {
 					studentsDto.setChoix("choix2");
 					studentsDto.setStatut(student.getChoix2().getValeur());
 					studentsDto.setSubjectTitle(subjects.get(i).getName());
+					studentsDto.setEmail(student.getInformationGenerale().getEmail());
 					dtos.add(studentsDto);
 				}
 			}

@@ -17,7 +17,6 @@ import ma.uae.models.Bac;
 import ma.uae.models.CED;
 import ma.uae.models.Copies;
 import ma.uae.models.Experience;
-import ma.uae.models.FileDate;
 import ma.uae.models.InformationGenerale;
 import ma.uae.models.Langues;
 import ma.uae.models.Licence;
@@ -42,7 +41,8 @@ public class Student {
 	private String name;
 	private String cne;
 	private String password;
-	private Boolean statusinscrire;
+	private Boolean statusinscription;
+
 	
 	@OneToOne
 	private InformationGenerale informationGenerale;
