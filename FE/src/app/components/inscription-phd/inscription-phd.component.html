@@ -1,0 +1,614 @@
+
+  <mat-stepper [linear]="isLinear" #stepper class="bottum">
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>etape 1</ng-template>
+        <div class="displ">
+            <label >Nom</label>
+            <mat-form-field>
+            <mat-label>Nom</mat-label>
+            <input matInput formControlName="Nom"  required>
+          </mat-form-field>
+          <label >Prenom</label>
+          <mat-form-field>
+              <mat-label>Prenom</mat-label>
+              <input matInput formControlName="Prenom"  required>
+            </mat-form-field>
+            <label>Etat civile</label>
+            <mat-form-field>
+            <mat-label>Etat civile</mat-label>
+            <mat-select formControlName="etat"  required>
+                <!-- Add mat-options for the select list -->
+                <mat-option value="1">Celebataire</mat-option>
+                <mat-option value="2">Marie(e)</mat-option>
+                <mat-option value="3">DEVORCE</mat-option>
+                <mat-option value="4">Veuve/Veuf</mat-option>
+                <!-- Add more options as needed -->
+            </mat-select>
+            </mat-form-field>
+            <label >Date de naissance</label>
+            <mat-form-field>
+            <input matInput type="Date" formControlName="DateN"  required>
+          </mat-form-field>
+          <label >Lieux de naissance</label>
+          <mat-form-field>
+              <mat-label>Lieux de naissance</mat-label>
+              <input matInput formControlName="Lieux"  required>
+            </mat-form-field>
+            <label >Pays de naissance</label>
+            <mat-form-field>
+              <mat-label>Pays de naissance</mat-label>
+              <input matInput formControlName="Pays"  required>
+            </mat-form-field>
+            <label >Nationalite</label>
+            <mat-form-field>
+              <mat-label>Nationalite</mat-label>
+              <input matInput formControlName="Nationalite"  required>
+            </mat-form-field>
+            <label>Profession de Pere</label>
+            <mat-form-field>
+            <mat-label>Profession de Pere</mat-label>
+            <mat-select formControlName="ProfessionP"  required>
+                <!-- Add mat-options for the select list -->
+                <mat-option value="1">Fonctionnaire</mat-option>
+                <mat-option value="2">Salarie</mat-option>
+                <mat-option value="3">Metier Libre</mat-option>
+                <mat-option value="4">Sans Emploi</mat-option>
+                <mat-option value="5">Retraite</mat-option>
+                <mat-option value="6">Autre</mat-option>
+                <!-- Add more options as needed -->
+            </mat-select>
+            </mat-form-field>
+            <label>Profession de Mere</label>
+            <mat-form-field>
+            <mat-label>Profession de Mere</mat-label>
+            <mat-select formControlName="ProfessionM"  required>
+              <mat-option value="1">Fonctionnaire</mat-option>
+              <mat-option value="2">Salarie</mat-option>
+              <mat-option value="3">Metier Libre</mat-option>
+              <mat-option value="4">Sans Emploi</mat-option>
+              <mat-option value="5">Retraite</mat-option>
+              <mat-option value="6">Autre</mat-option>
+            </mat-select>
+            </mat-form-field>
+            <label>Sexe</label>
+            <mat-form-field>
+            <mat-label>Sexe</mat-label>
+            <mat-select formControlName="Sexe" required>
+              <mat-option value="1">Homme</mat-option>
+              <mat-option value="2">Femme</mat-option>
+
+            </mat-select>
+            </mat-form-field>
+            <label >CIN</label>
+            <mat-form-field>
+              <mat-label>CIN</mat-label>
+              <input matInput formControlName="CIN"  required>
+            </mat-form-field>
+            <label >CNE</label>
+            <mat-form-field>
+              <mat-label>CNE</mat-label>
+              <input matInput formControlName="CNE"  required>
+            </mat-form-field>
+            <label>Profession</label>
+            <mat-form-field>
+            <mat-label>Profession</mat-label>
+            <mat-select formControlName="Profession"  required>
+              <mat-option value="1">Fonctionnaire</mat-option>
+              <mat-option value="2">Salarie</mat-option>
+              <mat-option value="3">Metier Libre</mat-option>
+              <mat-option value="4">Sans Emploi</mat-option>
+              <mat-option value="5">Retraite</mat-option>
+              <mat-option value="6">Autre</mat-option>
+            </mat-select>
+            </mat-form-field>
+            <label >Organisme employeur</label>
+            <mat-form-field>
+              <mat-label>Organisme employeur</mat-label>
+              <input matInput formControlName="Organisme"  required>
+            </mat-form-field>
+            <label >Adresse de correspondance</label>
+            <mat-form-field>
+              <mat-label>Adresse de correspondance</mat-label>
+              <input matInput formControlName="Adresse"  required>
+            </mat-form-field>
+            <label >Telephone</label>
+            <mat-form-field>
+              <mat-label>Telephone</mat-label>
+              <input matInput formControlName="Telephone"  required>
+            </mat-form-field>
+            <label >Email</label>
+            <mat-form-field>
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="Email"  required>
+            </mat-form-field>
+        </div>
+
+        <div >
+          <button mat-button matStepperNext (click)="logFormValues(1)" >Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondsFormGroup" label="etape 2">
+      <form [formGroup]="secondsFormGroup" >
+        <div  class="displ">
+        <label >specialte</label>
+        <mat-form-field>
+          <mat-label>Option</mat-label>
+          <input matInput formControlName="specialte"  required>
+        </mat-form-field>
+
+        <label >date d'obtention</label>
+        <mat-form-field>
+          <input matInput type="Date" formControlName="dateO"  required>
+        </mat-form-field>
+
+        <label >Lycee</label>
+        <mat-form-field>
+          <mat-label>Lycee</mat-label>
+          <input matInput formControlName="Lycee" required>
+        </mat-form-field>
+
+        <label >Academie</label>
+        <mat-form-field>
+          <mat-label>Academie</mat-label>
+          <input matInput formControlName="Academie" required>
+        </mat-form-field>
+
+        <label>Mention</label>
+            <mat-form-field>
+            <mat-label>Mention</mat-label>
+            <mat-select formControlName="Mention" required>
+              <mat-option value="1">Passable</mat-option>
+              <mat-option value="2">Assez Bien</mat-option>
+              <mat-option value="3">Bien</mat-option>
+              <mat-option value="4">Tres Bien</mat-option>
+              <mat-option value="5">Excellent</mat-option>
+            </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div>
+          <button mat-button matStepperPrevious  >Back</button>
+          <button mat-button matStepperNext (click)="logFormValues(2)">Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="therdFormGroup" label="etape 3">
+        <form [formGroup]="therdFormGroup">
+          <div  class="displ">
+          <label >specialte</label>
+          <mat-form-field>
+            <mat-label>Option</mat-label>
+            <input matInput formControlName="specialte" required>
+          </mat-form-field>
+
+          <label >date d'obtention</label>
+          <mat-form-field>
+            <input matInput type="Date" formControlName="date"  required>
+          </mat-form-field>
+
+          <label >Etablissement</label>
+          <mat-form-field>
+            <mat-label>Etablissement</mat-label>
+            <input matInput formControlName="Etablissement" required>
+          </mat-form-field>
+
+          <label >Universitie</label>
+          <mat-form-field>
+            <mat-label>Universitie</mat-label>
+            <input matInput formControlName="Universitie" required>
+          </mat-form-field>
+          <label >Pays d'obtention</label>
+          <mat-form-field>
+            <mat-label>Pays d'obtention</mat-label>
+            <input matInput formControlName="Pays" required>
+          </mat-form-field>
+          <label>Mention</label>
+              <mat-form-field>
+              <mat-label>Mention</mat-label>
+              <mat-select formControlName="Mention" required>
+                <mat-option value="1">Passable</mat-option>
+                <mat-option value="2">Assez Bien</mat-option>
+                <mat-option value="3">Bien</mat-option>
+                <mat-option value="4">Tres Bien</mat-option>
+                <mat-option value="5">Excellent</mat-option>
+              </mat-select>
+              </mat-form-field>
+          </div>
+
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext (click)="logFormValues(3)">Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="FourthFormGroup" label="etape 4">
+        <form [formGroup]="FourthFormGroup">
+          <div  class="displ">
+          <label >specialte</label>
+          <mat-form-field>
+            <mat-label>Option</mat-label>
+            <input matInput formControlName="specialte" required>
+          </mat-form-field>
+
+          <label >date d'obtention</label>
+          <mat-form-field>
+            <input matInput type="Date" formControlName="date"  required>
+          </mat-form-field>
+
+          <label >Etablissement</label>
+          <mat-form-field>
+            <mat-label>Etablissement</mat-label>
+            <input matInput formControlName="Etablissement" required>
+          </mat-form-field>
+
+          <label >Universitie</label>
+          <mat-form-field>
+            <mat-label>Universitie</mat-label>
+            <input matInput formControlName="Universitie" required>
+          </mat-form-field>
+
+          <label >Pays d'obtention</label>
+          <mat-form-field>
+            <mat-label>Pays d'obtention</mat-label>
+            <input matInput formControlName="Pays" required>
+          </mat-form-field>
+          <label>Mention</label>
+              <mat-form-field>
+              <mat-label>Mention</mat-label>
+              <mat-select formControlName="Mention" required>
+                <mat-option value="1">Passable</mat-option>
+                <mat-option value="2">Assez Bien</mat-option>
+                <mat-option value="3">Bien</mat-option>
+                <mat-option value="4">Tres Bien</mat-option>
+                <mat-option value="5">Excellent</mat-option>
+              </mat-select>
+              </mat-form-field>
+          </div>
+
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext (click)="logFormValues(4)">Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="fiveFormGroup" label="etape 5">
+        <form [formGroup]="fiveFormGroup">
+          <div  class="displ">
+          <label >specialte</label>
+          <mat-form-field>
+            <mat-label>Option</mat-label>
+            <input matInput formControlName="specialte" required>
+          </mat-form-field>
+
+          <label >date d'obtention</label>
+          <mat-form-field>
+            <input matInput type="Date" formControlName="date"  required>
+          </mat-form-field>
+
+          <label >Etablissement</label>
+          <mat-form-field>
+            <mat-label>Etablissement</mat-label>
+            <input matInput formControlName="Etablissement" required>
+          </mat-form-field>
+
+          <label >Pays d'obtention</label>
+          <mat-form-field>
+            <mat-label>Pays d'obtention</mat-label>
+            <input matInput formControlName="Pays" required>
+          </mat-form-field>
+          <label>Mention</label>
+              <mat-form-field>
+              <mat-label>Mention</mat-label>
+              <mat-select formControlName="Mention" required>
+                <mat-option value="1">Passable</mat-option>
+                <mat-option value="2">Assez Bien</mat-option>
+                <mat-option value="3">Bien</mat-option>
+                <mat-option value="4">Tres Bien</mat-option>
+                <mat-option value="5">Excellent</mat-option>
+              </mat-select>
+              </mat-form-field>
+          </div>
+
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext (click)="logFormValues(5)">Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="SixeFormGroup" label="etape 6">
+        <form [formGroup]="SixeFormGroup">
+          <div  class="displ">
+          <label >Langue 1</label>
+          <mat-form-field>
+            <mat-label>Langue 1</mat-label>
+            <input matInput formControlName="Langue1" required>
+          </mat-form-field>
+
+          <label>Niveau de Langue 1</label>
+            <mat-form-field>
+            <mat-label>Niveau</mat-label>
+            <mat-select formControlName="Niveau1" required>
+              <mat-option value="1">A1</mat-option>
+              <mat-option value="2">A2</mat-option>
+              <mat-option value="3">B1</mat-option>
+              <mat-option value="4">B2</mat-option>
+              <mat-option value="5">C1</mat-option>
+              <mat-option value="6">C2</mat-option>
+            </mat-select>
+            </mat-form-field>
+            <label >Langue 2</label>
+          <mat-form-field>
+            <mat-label>Langue 2</mat-label>
+            <input matInput formControlName="Langue2" required>
+          </mat-form-field>
+
+          <label>Niveau de Langue 2</label>
+            <mat-form-field>
+            <mat-label>Niveau</mat-label>
+            <mat-select formControlName="Niveau2" required>
+              <mat-option value="1">A1</mat-option>
+              <mat-option value="2">A2</mat-option>
+              <mat-option value="3">B1</mat-option>
+              <mat-option value="4">B2</mat-option>
+              <mat-option value="5">C1</mat-option>
+              <mat-option value="6">C2</mat-option>
+            </mat-select>
+            </mat-form-field>
+            <label >Langue 3</label>
+          <mat-form-field>
+            <mat-label>Langue 3</mat-label>
+            <input matInput formControlName="Langue3" required>
+          </mat-form-field>
+
+          <label>Niveau de Langue 3</label>
+            <mat-form-field>
+            <mat-label>Niveau</mat-label>
+            <mat-select formControlName="Niveau3" required>
+              <mat-option value="1">A1</mat-option>
+              <mat-option value="2">A2</mat-option>
+              <mat-option value="3">B1</mat-option>
+              <mat-option value="4">B2</mat-option>
+              <mat-option value="5">C1</mat-option>
+              <mat-option value="6">C2</mat-option>
+            </mat-select>
+            </mat-form-field>
+            <label >Langue 4</label>
+          <mat-form-field>
+            <mat-label>Langue 4</mat-label>
+            <input matInput formControlName="Langue4" required>
+          </mat-form-field>
+
+          <label>Niveau de Langue 4</label>
+            <mat-form-field>
+            <mat-label>Niveau</mat-label>
+            <mat-select formControlName="Niveau4" required>
+              <mat-option value="1">A1</mat-option>
+              <mat-option value="2">A2</mat-option>
+              <mat-option value="3">B1</mat-option>
+              <mat-option value="4">B2</mat-option>
+              <mat-option value="5">C1</mat-option>
+              <mat-option value="6">C2</mat-option>
+            </mat-select>
+            </mat-form-field>
+
+
+          </div>
+
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext (click)="logFormValues(6)">Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="sevenFormGroup" label="etape 7">
+        <form [formGroup]="sevenFormGroup">
+          <div  class="displ">
+          <label >Etablissement 1</label>
+          <mat-form-field>
+            <mat-label>Etablissement 1</mat-label>
+            <input matInput formControlName="Etablissement1" required>
+          </mat-form-field>
+          <label >Fonction 1</label>
+          <mat-form-field>
+            <mat-label>Fonction 1</mat-label>
+            <input matInput formControlName="Fonction1" required>
+          </mat-form-field>
+          <label >Periode commence a </label>
+            <mat-form-field>
+            <input matInput type="Date" formControlName="Periodec1"  required>
+          </mat-form-field>
+          <label >Periode fini a </label>
+          <mat-form-field>
+          <input matInput type="Date" formControlName="Periodef1"  required>
+        </mat-form-field>
+
+        <label >Etablissement 2</label>
+        <mat-form-field>
+          <mat-label>Etablissement 2</mat-label>
+          <input matInput formControlName="Etablissement2" required>
+        </mat-form-field>
+        <label >Fonction 2</label>
+        <mat-form-field>
+          <mat-label>Fonction 2</mat-label>
+          <input matInput formControlName="Fonction2" required>
+        </mat-form-field>
+        <label >Periode commence a </label>
+          <mat-form-field>
+          <input matInput type="Date" formControlName="Periodec2"  required>
+        </mat-form-field>
+        <label >Periode fini a </label>
+        <mat-form-field>
+        <input matInput type="Date" formControlName="Periodef2"  required>
+      </mat-form-field>
+      <label >Etablissement 3</label>
+          <mat-form-field>
+            <mat-label>Etablissement 3</mat-label>
+            <input matInput formControlName="Etablissement3" required>
+          </mat-form-field>
+          <label >Fonction 3</label>
+          <mat-form-field>
+            <mat-label>Fonction 3</mat-label>
+            <input matInput formControlName="Fonction3" required>
+          </mat-form-field>
+          <label >Periode commence a </label>
+            <mat-form-field>
+            <input matInput type="Date" formControlName="Periodec3"  required>
+          </mat-form-field>
+          <label >Periode fini a </label>
+          <mat-form-field>
+          <input matInput type="Date" formControlName="Periodef3"  required>
+        </mat-form-field>
+
+
+          </div>
+
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext (click)="logFormValues(7)">Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="eightFormGroup" label="etape 8">
+        <form [formGroup]="eightFormGroup">
+          <div  class="displ">
+
+            <label>C.E.D</label>
+            <mat-form-field>
+            <mat-label>C.E.D</mat-label>
+            <mat-select formControlName="ced"  required>
+              <mat-option value="1">Science et Technologie (FS)</mat-option>
+              <mat-option value="2">Science et Technologie de l'inginieur</mat-option>
+              <mat-option value="3">Etudes de croyances et pensee Musulmain</mat-option>
+              <mat-option value="4">Droit privee</mat-option>
+              <mat-option value="5">Droit Public</mat-option>
+              <mat-option value="6">Economie et gestion</mat-option>
+            </mat-select>
+            </mat-form-field>
+
+          </div>
+
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext (click)="logFormValues(8)">Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="nineFormGroup" label="etape 9">
+        <form [formGroup]="nineFormGroup">
+          <div  class="displ">
+
+            <label >Choix 1</label>
+          <mat-form-field>
+            <mat-label>Choix 1</mat-label>
+            <input matInput formControlName="Choix1" required>
+          </mat-form-field>
+          <label >Choix 2</label>
+          <mat-form-field>
+            <mat-label>Choix 2</mat-label>
+            <input matInput formControlName="Choix2" required>
+          </mat-form-field>
+
+          </div>
+          <div class="displrow" *ngFor="let sujet of allSubjects">
+            <h1 class="sujetnumber">{{sujet.idsubject}} :</h1>
+            <h2 class="sujetnumber"> {{sujet.name}}</h2>
+            <h3><a routerLink="/descriptionSub/{{sujet.idsubject}}">Description</a></h3>
+          </div>
+
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext (click)="logFormValues(9)">Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="eightFormGroup" label="etape 10">
+        <form [formGroup]="eightFormGroup">
+          <div  class="displ">
+
+            <h1>Bac : </h1>
+
+            <div class="row">
+              <div class="col-8">
+                <label class="btn btn-default p-0">
+                  <input type="file" (change)="selectBacFile($event)" />
+                </label>
+              </div>
+            </div>
+
+            <h1>Cin : </h1>
+
+            <div class="row">
+              <div class="col-8">
+                <label class="btn btn-default p-0">
+                  <input type="file" (change)="selectCinFile($event)" />
+                </label>
+              </div>
+            </div>
+
+            <h1>Cv : </h1>
+
+            <div class="row">
+              <div class="col-8">
+                <label class="btn btn-default p-0">
+                  <input type="file" (change)="selectCvFile($event)" />
+                </label>
+              </div>
+            </div>
+
+            <h1>Image : </h1>
+
+            <div class="row">
+              <div class="col-8">
+                <label class="btn btn-default p-0">
+                  <input type="file" (change)="selectImageFile($event)" />
+                </label>
+              </div>
+            </div>
+
+            <h1>License : </h1>
+
+            <div class="row">
+              <div class="col-8">
+                <label class="btn btn-default p-0">
+                  <input type="file" (change)="selectLicenseFile($event)" />
+                </label>
+              </div>
+            </div>
+
+            <h1>Master : </h1>
+
+            <div class="row">
+              <div class="col-8">
+                <label class="btn btn-default p-0">
+                  <input type="file" (change)="selectMasterFile($event)" />
+                </label>
+              </div>
+            </div>
+
+
+
+          </div>
+
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext (click)="logFormValues(10)">Next</button>
+          </div>
+        </form>
+      </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="logFormValues(11)">submit</button>
+      </div>
+    </mat-step>
+  </mat-stepper>

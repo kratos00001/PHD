@@ -1,18 +1,46 @@
 <div class="container">
     <div class="logo-container">
-        <a href="/">
-            <img src="../../../assets/uae_logo.png" alt="Logo 1" class="logo">
-        </a>
-        <h1 class="main-title">Gestion du Cycle Doctorat</h1>
+      <a href="/">
+        <img src="../../../assets/uae_logo.png" alt="Logo 1" class="logo">
+      </a>
+      <h1 class="main-title">Gestion du Cycle Doctorat</h1>
     </div>
     <hr>
-    <h2>Inscription en thèse :</h2>
-    <p>
-        Le Président de l'Université informe les titulaires de diplômes de master ou équivalent avec<span style="color: red;"> mention Assez bien ou plus</span> - y compris les candidats étrangers - qu'ils peuvent déposer leur candidature en ligne pour une inscription en thèse au titre de l'année Universitaire 2022-2023 , en cliquant sur le bouton ci-dessous :</p>
-
-        <div class="button-container">
-            <a class="custom-button" *ngIf="!studentService.isAuthenticated()" href="/application">Candidature en ligne</a>
-            <a class="custom-button" *ngIf="studentService.isAuthenticated()" href="/">Déjà connecté</a>
-            <button *ngIf="studentService.isAuthenticated()" class="button btn-danger" (click)="logout_s()">Logout</button>
+  
+    <!-- Check if the user is authenticated -->
+    <div *ngIf="studentService.isAuthenticated() && isAlreadyInscribed; else loginContent">
+      <!-- Content for authenticated users -->
+      <div class="authenticated-content">
+        <h3>{{ messageInscription }}</h3>
+        <h3>Choix 1: {{ choix1Reult }}</h3>
+        <h3>Choix 2: {{ choix2Reult }}</h3>
+        <div class="text-center mt-4">
+          <button class="btn btn-danger" (click)="logout_s()">
+            <i class="fas fa-sign-out-alt mr-1"></i> Logout
+          </button>
         </div>
-</div>
+      </div>
+    </div>
+  
+    <!-- Content for non-authenticated users -->
+    <ng-template #loginContent>
+      <h2>Inscription en thèse :</h2>
+      <p>
+        Le Président de l'Université informe les titulaires de diplômes de master ou équivalent avec
+        <span style="color: red;"> mention Assez bien ou plus</span> - y compris les candidats étrangers - qu'ils peuvent déposer leur candidature en ligne pour une inscription en thèse au titre de l'année Universitaire 2022-2023 , en cliquant sur le bouton ci-dessous :
+      </p>
+      <div *ngIf="!studentService.isAuthenticated(); else logout">
+        <div class="button-container">
+            <a class="custom-button" href="/application">Candidature en ligne</a>
+        </div>
+      </div>
+      <ng-template #logout>
+        <div class="text-center mt-4">
+            <button class="btn btn-danger" (click)="logout_s()">
+                <i class="fas fa-sign-out-alt mr-1"></i> Logout
+            </button>
+        </div>
+      </ng-template>
+    </ng-template>
+  </div>
+  

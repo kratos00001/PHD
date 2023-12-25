@@ -52,6 +52,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px;
 }
 .logo {
     max-width: 100px;
@@ -61,10 +62,9 @@
 .main-title {
     font-size: 30px;
     font-weight: bold;
-    color: #005faa; /* Darker blue main title */
+    color: #6499D9;
     text-align: center;
-    margin: auto; 
-    padding-right: 150px;
+    margin: 20px 0;
 }
 .container {
     background-color: #f0f5ff; /* Light blue background */

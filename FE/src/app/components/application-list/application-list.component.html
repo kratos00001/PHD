@@ -1,5 +1,39 @@
 <div class="container">
-    
-    <app-teachers-navbar></app-teachers-navbar>
-    
+  <app-teachers-navbar></app-teachers-navbar>
+  <br>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Email</th>
+        <th>Titre de sujet</th>
+        <th>Choix</th>
+        <th>statut</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let subject of allSubjects">
+        <td>{{subject.nom}}</td>
+        <td>{{subject.prenom}}</td>
+        <td>{{subject.email}}</td>
+        <td>{{subject.subjectTitle}}</td>
+        <td>{{subject.choix}}</td>
+        <td>{{subject.statut}}</td>
+        <td>
+          <button class="btn" (click)="accepter(subject.idstudent, subject.choix)">
+            <i class="fas fa-check" style="color: green;"></i>
+          </button>
+          <button class="btn" (click)="refuser(subject.idstudent, subject.choix)">
+            <i class="fas fa-times" style="color: red;"></i>
+          </button>
+          <a class="btn" routerLink="/student/consulter/{{ subject.idstudent }}">
+            <i class="fas fa-eye" style="color: blue;"></i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

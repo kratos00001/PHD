@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { studentsDto } from '../model/studentsdto';
+import { Consulter } from '../model/ConsulterStudent';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +19,25 @@ export class TeacherService {
     return this.http.get(`${this.apiUrl}/api/teachers`);
   }
 
+  Getallstudentdto(): Observable<any> {
+    const idteacher = localStorage.getItem('teacherId') as unknown as number;
+    const id=idteacher;
+    return this.http.get<studentsDto>(`${this.apiUrl}/phd/students/${id}`);
+  }
+  consulterStudent(id: number): Observable<any> {
+    return this.http.get<Consulter>(`${this.apiUrl}/phd/students/consulter/${id}`);
+  }
+
   getTeacherById(id: number): Observable<any> {
     return this.http.get(`${this.apiUrl}/api/teachers/${id}`);
+  }
+
+  accepter(userId:number, choixId:number) {
+    return this.http.post(`${this.apiUrl}/phd/accepter/${userId}/${choixId}`,{});
+  }
+
+  refuser(userId:number, choixId:number) {
+    return this.http.post(`${this.apiUrl}/phd/refuser/${userId}/${choixId}`,{});
   }
 
   initializeAuthState(): void {
@@ -55,7 +74,7 @@ export class TeacherService {
     localStorage.setItem(this.teacherIdKey, id.toString());
     console.log('Teacher ID set to:', id);
   }
-  
+
 
   getCurrentTeacherId(): number{
     const storedId = localStorage.getItem(this.teacherIdKey);
@@ -67,4 +86,8 @@ export class TeacherService {
       return 0;
     }
   }
+  sendEmail(emailDetails: { to: string; subject: string; body: string }): Observable<any> {
+    return this.http.post(`${this.apiUrl}/send-email`, emailDetails);
+  }
+  
 }

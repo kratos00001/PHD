@@ -1,0 +1,324 @@
+<mat-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+        <ng-template matStepLabel>Fill out your name</ng-template>
+        <div class="infos">
+            <mat-label class="titre">Nom :</mat-label>
+            <mat-label>{{student1.nom}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">Prenom :</mat-label>
+            <mat-label>{{student1.prenom}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">Lieu de Naissance :</mat-label>
+            <mat-label>{{student1.lieuDeNaissance}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">Pays de Naissance :</mat-label>
+            <mat-label>{{student1.paysDenaissance}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">Nationalite :</mat-label>
+            <mat-label>{{student1.nationalite}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">CNE :</mat-label>
+            <mat-label>{{student1.cNE}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">date de Naissance :</mat-label>
+            <mat-label>{{changeformdate(student1.dateDeNaissance)}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">CIN :</mat-label>
+            <mat-label>{{student1.cIN}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">Organisme Employeur :</mat-label>
+            <mat-label>{{student1.organismeEmployeur}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">Adresse de Correspondance :</mat-label>
+            <mat-label>{{student1.adresseDeCorrespondance}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">Telephone :</mat-label>
+            <mat-label>{{student1.telephone}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">Email :</mat-label>
+            <mat-label>{{student1.email}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">Etat Civile :</mat-label>
+            <mat-label>{{student1.etatCivil}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">Proffesion de pere :</mat-label>
+            <mat-label>{{student1.professionDePere}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">Profession de mere :</mat-label>
+            <mat-label>{{student1.professionDeMere}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">Proffesion :</mat-label>
+            <mat-label>{{student1.myProfession}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">Sexe :</mat-label>
+            <mat-label>{{student1.sexe}}</mat-label>
+        </div>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" label="bac">
+        <div class="infos">
+            <mat-label class="titre">specialite :</mat-label>
+            <mat-label>{{student1.bacspecialite}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">lycee :</mat-label>
+            <mat-label>{{student1.lycee}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">academie :</mat-label>
+            <mat-label>{{student1.academie}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">Date d'obtention :</mat-label>
+            <mat-label>{{changeformdate(student1.bacdateDObtention)}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">mention :</mat-label>
+            <mat-label>{{student1.bacmention}}</mat-label>
+        </div>
+        <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" label="Licence">
+        <div class="infos">
+            <mat-label class="titre">specialite :</mat-label>
+            <mat-label>{{student1.licencespecialite}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">etablissement :</mat-label>
+            <mat-label>{{student1.licenceetablissement}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">univertiste :</mat-label>
+            <mat-label>{{student1.licenceunivertiste}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">pays :</mat-label>
+            <mat-label>{{student1.licencepays}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">Date d'obtention :</mat-label>
+            <mat-label>{{changeformdate(student1.licencedateDObtention)}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">mention :</mat-label>
+            <mat-label>{{student1.licencemention}}</mat-label>
+        </div>
+        <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" label="Master">
+        <div class="infos">
+            <mat-label class="titre">specialite :</mat-label>
+            <mat-label>{{student1.masterspecialite}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">etablissement :</mat-label>
+            <mat-label>{{student1.masteretablissement}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">univertiste :</mat-label>
+            <mat-label>{{student1.masterunivertiste}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">pays :</mat-label>
+            <mat-label>{{student1.masterpays}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">Date d'obtention :</mat-label>
+            <mat-label>{{changeformdate(student1.masterdateDObtention)}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">mention :</mat-label>
+            <mat-label>{{student1.mastermention}}</mat-label>
+        </div>
+        <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" label="autre deplome">
+        <div class="infos">
+            <mat-label class="titre">specialite :</mat-label>
+            <mat-label>{{student1.specialite}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">etablissement :</mat-label>
+            <mat-label>{{student1.etablissement}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">pays :</mat-label>
+            <mat-label>{{student1.pays}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">Date d'obtention :</mat-label>
+            <mat-label>{{changeformdate(student1.dateDObtention)}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">mention :</mat-label>
+            <mat-label>{{student1.mention}}</mat-label>
+        </div>
+        <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" label="langue">
+        <div class="infos">
+            <mat-label class="titre">langue 1 :</mat-label>
+            <mat-label>{{student1.langue1}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">niveau 1 :</mat-label>
+            <mat-label>{{student1.niveau1}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">langue 2 :</mat-label>
+            <mat-label>{{student1.langue2}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">niveau 2 :</mat-label>
+            <mat-label>{{student1.niveau2}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">langue 3 :</mat-label>
+            <mat-label>{{student1.langue3}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">niveau 3 :</mat-label>
+            <mat-label>{{student1.niveau3}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">langue 4 :</mat-label>
+            <mat-label>{{student1.langue4}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">niveau 4 :</mat-label>
+            <mat-label>{{student1.niveau4}}</mat-label>
+        </div>
+        <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" label="experience">
+        <div class="infos">
+            <mat-label class="titre">etablissement 1 :</mat-label>
+            <mat-label>{{student1.etablissement1}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">fonction1 :</mat-label>
+            <mat-label>{{student1.fonction1}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">periode 1 Commence a :</mat-label>
+            <mat-label>{{changeformdate(student1.periodeCommence1)}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">periode 1 Fin a :</mat-label>
+            <mat-label>{{changeformdate(student1.periodeFin1)}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">etablissement 2 :</mat-label>
+            <mat-label>{{student1.etablissement2}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">fonction2 :</mat-label>
+            <mat-label>{{student1.fonction2}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">periode 2 Commence a :</mat-label>
+            <mat-label>{{changeformdate(student1.periodeCommence2)}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">periode 2 Fin a :</mat-label>
+            <mat-label>{{changeformdate(student1.periodeFin2)}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">etablissement 3 :</mat-label>
+            <mat-label>{{student1.etablissement3}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">fonction3 :</mat-label>
+            <mat-label>{{student1.fonction3}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">periode 3 Commence a :</mat-label>
+            <mat-label>{{changeformdate(student1.periodeCommence3)}}</mat-label>
+        </div>
+        <div class="infos">
+            <mat-label class="titre">periode 3 Fin a :</mat-label>
+            <mat-label>{{changeformdate(student1.periodeFin3)}}</mat-label>
+        </div>
+
+        <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" label="Documents">
+        <div class="infos">
+            <mat-label class="titre">  Bac :</mat-label>
+            <button (click)="downloadFile('bac')">Télécharger</button>
+        </div>
+
+        <div class="infos">
+          <mat-label class="titre">  Cin :</mat-label>
+          <button  (click)="downloadFile('cin')">Télécharger</button>
+      </div>
+
+      <div class="infos">
+        <mat-label class="titre">  Cv :</mat-label>
+        <button  (click)="downloadFile('cv')">Télécharger</button>
+    </div>
+
+    <div class="infos">
+      <mat-label class="titre">  Image :</mat-label>
+      <button  (click)="downloadFile('image')">Télécharger</button>
+  </div>
+
+  <div class="infos">
+    <mat-label class="titre">  License :</mat-label>
+    <button  (click)="downloadFile('license')">Télécharger</button>
+</div>
+
+<div class="infos">
+  <mat-label class="titre">  Master :</mat-label>
+  <button  (click)="downloadFile('master')">Télécharger</button>
+</div>
+
+        <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup" label="experience">
+      <div class="infos">
+          <mat-label class="titre">C.E.D  :</mat-label>
+          <mat-label>{{student1.ced}}</mat-label>
+      </div>
+
+
+      <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+  </mat-step>
+
+  </mat-stepper>
